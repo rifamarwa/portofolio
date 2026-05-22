@@ -3,46 +3,9 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
-
-const projects = [
-  {
-    title: "BTS.id – Company Profile Website Enhancement (Landing Page)",
-    description:
-      "The enhancement project focused on improving the landing page’s UI/UX, responsiveness, and content structure to strengthen brand identity and deliver a smoother browsing experience.",
-    size: "large",
-  },
-  {
-    title: "e-Numbering",
-    description:
-      "a web-based application used to manage ITM documentation enumbering.",
-    size: "small",
-  },
-
-  {
-    title: "Biofarma - Vaksin Tetanus (Web)",
-    description:
-      "a web-based application for managing tetanus vaccine experiments that can be accessed by supervisors.",
-    size: "medium",
-  },
-  {
-    title: "IMAP",
-    description:
-      "a web-based application used as an employee portal within the ITM Group. This application includes content management (highlights, message boards, articles, etc.) accessible to all ITM employees.",
-    size: "large",
-  },
-  {
-    title: "Revamp Winning",
-    description:
-      " a web-based application for recruiting and managing ship crews for an offshore shipping company. It consists of two integrated applications: a company profile website to showcase the organization's services and values, and a CMS (Content Management System) used to manage the recruitment process and crew data efficiently",
-    size: "large",
-  },
-  {
-    title: "Roster",
-    description:
-      "a web-based application used to manage ITM employee rosters and leave.",
-    size: "medium",
-  },
-];
+import { projects } from "@/constants/projects";
+import { techRegistry } from "@/constants/techstack";
+import BaseChip from "@/components/base/chip/chip";
 
 export default function FeaturedProjects() {
   return (
@@ -85,7 +48,7 @@ export default function FeaturedProjects() {
                                     0_30px_90px_rgba(214,113,55,0.14)]
                                     before:absolute
                   before:inset-0
-                  before:bg-gradient-to-b
+                  before:bg-linear-to-b
                   before:from-white/5
                   before:to-transparent
                   before:opacity-0
@@ -135,7 +98,7 @@ export default function FeaturedProjects() {
                     `}
                   >
                     <img
-                      src="https://picsum.photos/200"
+                      src={project.images}
                       alt={project.title}
                       className="
                       h-full w-full object-cover
@@ -147,21 +110,28 @@ export default function FeaturedProjects() {
                     <div
                       className="
                         absolute inset-0
-                        bg-gradient-to-t
+                        bg-linear-to-t
                         from-black/30
                         to-transparent
                       "
                     />
                   </div>
 
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    <span className="rounded-full border px-3 py-1 text-xs">
-                      Next.js
-                    </span>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {project.tech.map((item) => {
+                      const tech = techRegistry?.[item];
 
-                    <span className="rounded-full border px-3 py-1 text-xs">
-                      Tailwind
-                    </span>
+                      if (!tech) return null;
+
+                      return (
+                        <BaseChip
+                          key={item}
+                          label={item}
+                          icon={tech.icon}
+                          variant={tech.variant}
+                        />
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>

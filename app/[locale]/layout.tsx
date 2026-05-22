@@ -1,3 +1,4 @@
+import Footer from "@/components/base/footer/footer";
 import Image from "next/image";
 
 export default function HomeLayout({
@@ -29,6 +30,10 @@ export default function HomeLayout({
       <main className="flex flex-1 w-full max-w-7xl flex-col items-start justify-between z-20">
         {children}
       </main>
+
+      <div className="pt-16 w-full">
+        <Footer />
+      </div>
     </div>
   );
 }

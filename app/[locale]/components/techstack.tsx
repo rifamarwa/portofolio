@@ -1,44 +1,7 @@
 "use client";
 
+import { techGroups } from "@/constants/techstack";
 import Image from "next/image";
-
-const techGroups = [
-  {
-    title: "Core Stack",
-    items: [
-      { name: "JavaScript", icon: "/assets/icons/icon-js.svg" },
-      { name: "TypeScript", icon: "/assets/icons/icon-ts.svg" },
-      { name: "HTML", icon: "/assets/icons/icon-html.png" },
-      { name: "CSS", icon: "/assets/icons/icon-css.png" },
-      { name: "React.js", icon: "/assets/icons/icon-reactjs.svg" },
-      { name: "Next.js", icon: "/assets/icons/icon-nextjs.svg" },
-      { name: "Angular", icon: "/assets/icons/icon-angular.svg" },
-      { name: "Nuxt.js", icon: "/assets/icons/icon-nuxtjs.svg" },
-      { name: "Vite", icon: "/assets/icons/icon-vite.png" },
-    ],
-  },
-
-  {
-    title: "Styling & Animation",
-    items: [
-      { name: "Tailwind CSS", icon: "/assets/icons/icon-tailwindcss.png" },
-      { name: "Material UI", icon: "/assets/icons/icon-materialui.png" },
-      { name: "Ant Design", icon: "/assets/icons/icon-antd.svg" },
-      { name: "PrimeNG", icon: "/assets/icons/icon-primeng.png" },
-      { name: "Chart.js", icon: "/assets/icons/icon-chartjs.svg" },
-    ],
-  },
-
-  {
-    title: "Tooling & Headless",
-    items: [
-      { name: "Git", icon: "/assets/icons/icon-git.svg" },
-      { name: "GitLab", icon: "/assets/icons/icon-gitlab.svg" },
-      { name: "Firebase", icon: "/assets/icons/icon-firebase.svg" },
-      { name: "Figma", icon: "/assets/icons/icon-figma.svg" },
-    ],
-  },
-];
 
 export default function Techstack() {
   return (
@@ -130,8 +93,8 @@ export default function Techstack() {
                           overflow-hidden
                           rounded-[30px]
 
-                          border border-border/50
-                          bg-card/50
+                          border border-border/40
+                          bg-card/70
 
                           px-9 py-7
 
@@ -143,12 +106,31 @@ export default function Techstack() {
                           hover:scale-[1.02]
 
                           hover:border-primary-400/40
-                          hover:bg-primary-500/5
+                          hover:bg-background/60
 
-                          hover:shadow-[0_0_50px_rgba(214,113,55,0.18),
-                                        0_20px_100px_rgba(214,113,55,0.12)]
+                          /* LIGHT MODE DEPTH */
+                          shadow-[0_8px_30px_rgba(44,37,31,0.06)]
+
+                          /* DARK MODE DEPTH */
+                          dark:shadow-none
+
+                          hover:shadow-[0_20px_60px_rgba(214,113,55,0.12)]
                         "
                       >
+                        <div
+                          className="
+                            absolute inset-0
+
+                            opacity-0
+                            transition-opacity duration-500
+
+                            group-hover:opacity-100
+
+                            bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.10),transparent_70%)]
+
+                            pointer-events-none
+                          "
+                        />
                         {/* GLOSS OVERLAY */}
                         <div
                           className="
