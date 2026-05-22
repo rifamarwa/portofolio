@@ -6,7 +6,7 @@ export default function HomeLayout({
   readonly children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans dark:bg-background relative ">
+    <div className="flex flex-col flex-1 items-center justify-center bg-background font-philosopher dark:bg-background relative ">
       <div className="fixed -bottom-20 right-0 z-10">
         <Image
           src="/assets/background/bg-main-light.png"
