@@ -12,7 +12,7 @@ export default function Footer() {
 
         border-t border-border/50
 
-        bg-gradient-to-b
+        bg-linear-to-b
         from-transparent
         via-[#faf5ef]
         to-[#f3e9dd]
@@ -34,8 +34,8 @@ export default function Footer() {
 
           left-1/2 top-0
 
-          h-[250px]
-          w-[500px]
+          h-62.5
+          w-125
 
           -translate-x-1/2
 

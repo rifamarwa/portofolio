@@ -90,10 +90,10 @@ export default function FeaturedProjects() {
                       relative mt-6 overflow-hidden rounded-2xl border border-white/10
                       ${
                         index % 3 === 0
-                          ? "h-[320px]"
+                          ? "h-80"
                           : index % 2 === 0
-                            ? "h-[220px]"
-                            : "h-[260px]"
+                            ? "h-55"
+                            : "h-65"
                       }
                     `}
                   >

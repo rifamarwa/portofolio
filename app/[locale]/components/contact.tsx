@@ -11,7 +11,7 @@ export default function ContactSection() {
       <div
         className="
           absolute left-1/2 top-1/2
-          h-[600px] w-[600px]
+          h-150 w-150
 
           -translate-x-1/2 -translate-y-1/2
 
@@ -83,7 +83,7 @@ export default function ContactSection() {
         >
           {/* EMAIL */}
           <Link
-            href="mailto:yourmail@email.com"
+            href="mailto:rifamarwa4869@email.com"
             className="
               group
               inline-flex items-center gap-3
