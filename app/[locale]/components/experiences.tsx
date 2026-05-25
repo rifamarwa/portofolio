@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import BaseChip from "@/components/base/chip/chip";
@@ -8,50 +9,27 @@ import { ArrowUpRight } from "lucide-react";
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 function ExperienceCard({
   experience,
   index,
   activeIndex,
-  setActiveIndex,
+  cardRef,
+  t,
 }: Readonly<{
   experience: (typeof experiences)[0];
   index: number;
   activeIndex: number;
-  setActiveIndex: (index: number) => void;
+  cardRef: (el: HTMLDivElement | null) => void;
+  t: any;
 }>) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-
-      const rect = ref.current.getBoundingClientRect();
-
-      const triggerPoint = window.innerHeight * 0.35;
-
-      const isInFocus = rect.top <= triggerPoint && rect.bottom >= triggerPoint;
-
-      if (isInFocus) {
-        setActiveIndex(index);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [index, setActiveIndex]);
-
   const isActive = activeIndex === index;
   const isPast = index < activeIndex;
 
   return (
     <motion.div
-      ref={ref}
+      ref={cardRef}
       className="sticky"
       style={{
         top: `${200 + index * 56}px`,
@@ -128,7 +106,7 @@ function ExperienceCard({
                   </p>
 
                   <p className="mt-2 text-base text-muted-foreground/70">
-                    {experience.location}
+                    {t(`experiences.${experience.key}.location`)}
                   </p>
                 </div>
 
@@ -168,31 +146,33 @@ function ExperienceCard({
             {/* RIGHT */}
             <div>
               <p className="max-w-3xl text-xl leading-relaxed text-muted-foreground">
-                {experience.description}
+                {t(`experiences.${experience.key}.description`)}
               </p>
 
               <div className="mt-8 space-y-5">
-                {experience.impact.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="
+                {t
+                  .raw(`experiences.${experience.key}.impact`)
+                  .map((item: string, idx: number) => (
+                    <div
+                      key={idx}
+                      className="
                         flex items-start gap-4
                         border-l border-primary-400/20
                         pl-5
                       "
-                  >
-                    <div
-                      className="
+                    >
+                      <div
+                        className="
                           mt-2 size-2 shrink-0 rounded-full
                           bg-primary-400
                         "
-                    />
+                      />
 
-                    <p className="text-lg leading-relaxed text-foreground/90">
-                      {item}
-                    </p>
-                  </div>
-                ))}
+                      <p className="text-lg leading-relaxed text-foreground/90">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -204,6 +184,44 @@ function ExperienceCard({
 
 export default function ExperienceSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const t = useTranslations("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerPoint = window.innerHeight * 0.35;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cardRefs.current.forEach((card, index) => {
+        if (!card) return;
+
+        const rect = card.getBoundingClientRect();
+
+        const distance = Math.abs(rect.top - triggerPoint);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-visible py-32">
       {/* GLOW */}
@@ -222,13 +240,11 @@ export default function ExperienceSection() {
         {/* HEADER */}
         <div className="mb-20">
           <h2 className="text-5xl font-bold tracking-tight md:text-6xl">
-            Selected Experience
+            {t("experiences.title")}
           </h2>
 
           <p className="mt-4 max-w-3xl text-xl leading-relaxed text-muted-foreground">
-            Over 3 years of experience building scalable frontend systems across
-            enterprise platforms, healthcare applications, internal dashboards,
-            and CMS ecosystems.
+            {t("experiences.description")}
           </p>
         </div>
 
@@ -240,7 +256,10 @@ export default function ExperienceSection() {
               experience={experience}
               index={index}
               activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+              cardRef={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              t={t}
             />
           ))}
         </div>
