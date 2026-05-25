@@ -5,21 +5,22 @@ import FeaturedProjects from "./components/featured-projects";
 import Techstack from "./components/techstack";
 import ExperienceSection from "./components/experiences";
 import ContactSection from "./components/contact";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("home");
+
   return (
     <div>
       <BaseNavbar />
-      <div className="max-w-3xl py-56">
-        <h1 className="text-7xl text-shadow-lg font-medium">
-          Frontend Developer focused on React.js &{" "}
-          <span className="text-primary">Warm</span> Scalable Architecture
+      <div className="max-w-3xl h-screen flex flex-col justify-center mb-40">
+        <h1 className="text-7xl font-medium text-shadow-lg pt-20">
+          {t("heroTitle.before")}{" "}
+          <span className="text-primary">{t("heroTitle.highlight")}</span>{" "}
+          {t("heroTitle.after")}
         </h1>
         <p className="mt-6 text-2xl leading-relaxed max-w-2xl">
-          Specializing in turning complex industry requirements—from heavy
-          industries to healthcare—into seamless, scalable user interfaces. Over
-          3 years of developing reliable company profiles and enterprise CMS
-          with a strong, collaborative, and technology-agnostic approach.
+          {t("heroDescription")}
         </p>
       </div>
 

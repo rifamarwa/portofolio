@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function ContactSection() {
+  const t = useTranslations("home");
   return (
     <section className="relative overflow-hidden py-40">
       {/* AMBIENT GLOW */}
@@ -34,7 +36,7 @@ export default function ContactSection() {
             text-primary-400
           "
         >
-          Let’s Build Something
+          {t("contact.label")}
         </p>
 
         {/* TITLE */}
@@ -51,9 +53,10 @@ export default function ContactSection() {
             md:text-7xl
           "
         >
-          Designing scalable experiences with
-          <span className="text-primary"> clarity</span>, performance, and
-          modern frontend architecture.
+          {t("contact.title.before")}{" "}
+          <span className="text-primary">{t("contact.title.highlight")}</span>
+          {", "}
+          {t("contact.title.after")}
         </h2>
 
         {/* DESCRIPTION */}
@@ -68,8 +71,7 @@ export default function ContactSection() {
             text-muted-foreground
           "
         >
-          Currently focused on enterprise frontend systems, interactive user
-          experiences, and scalable React/Next.js applications.
+          {t("contact.description")}
         </p>
 
         {/* BUTTONS */}
@@ -106,7 +108,7 @@ export default function ContactSection() {
             "
           >
             <Mail className="size-5" />
-            Let’s Talk
+            {t("contact.letsTalk")}
             <ArrowUpRight
               className="
                 size-5
@@ -222,7 +224,7 @@ export default function ContactSection() {
               animate-pulse
             "
           />
-          Available for freelance and remote opportunities
+          {t("contact.freelance")}
         </div>
       </div>
     </section>

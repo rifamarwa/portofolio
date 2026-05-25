@@ -6,24 +6,28 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/constants/projects";
 import { techRegistry } from "@/constants/techstack";
 import BaseChip from "@/components/base/chip/chip";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function FeaturedProjects() {
+  const t = useTranslations("home");
+
   return (
     <section className="w-full pb-64">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-10">
-          <h2 className="text-5xl font-bold tracking-tight">
-            Featured Projects
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
+            {t("projectTitle")}
           </h2>
           <p className="mt-2 text-muted-foreground text-2xl">
-            Selected works and experiments.
+            {t("projectDescription")}
           </p>
         </div>
 
         <div className="columns-1 md:columns-2 xl:columns-3 gap-4 space-y-4">
           {projects.map((project, index) => (
             <Link
-              key={index}
+              key={project.key}
               href="/"
               className="group block break-inside-avoid"
             >
@@ -76,11 +80,11 @@ export default function FeaturedProjects() {
 
                   <div className="mt-5">
                     <h3 className="text-3xl font-semibold tracking-tight">
-                      {project.title}
+                      {t(`projects.${project.key}.title`)}
                     </h3>
 
                     <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-                      {project.description}
+                      {t(`projects.${project.key}.description`)}
                     </p>
                   </div>
 
@@ -97,9 +101,11 @@ export default function FeaturedProjects() {
                       }
                     `}
                   >
-                    <img
+                    <Image
                       src={project.images}
-                      alt={project.title}
+                      alt={project.key}
+                      width={400}
+                      height={400}
                       className="
                       h-full w-full object-cover
                       transition-transform duration-700
