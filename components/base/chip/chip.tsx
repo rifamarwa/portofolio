@@ -121,14 +121,18 @@ export default function BaseChip({
           group
           relative
 
-          flex items-center gap-3
+          inline-flex min-w-0 items-center
+          gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3
 
           overflow-hidden
           rounded-full
 
           border
 
-          px-4 py-2.5
+          px-2.5 py-1.5
+          xs:px-3 xs:py-2
+          sm:px-3.5 sm:py-2
+          md:px-4 md:py-2.5
 
           backdrop-blur-md
 
@@ -147,16 +151,15 @@ export default function BaseChip({
       {/* GLOW */}
       <div
         className="
+          pointer-events-none
           absolute inset-0
+
+          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_70%)]
 
           opacity-0
           transition-opacity duration-300
 
           group-hover:opacity-100
-
-          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_70%)]
-
-          pointer-events-none
         "
       />
 
@@ -169,7 +172,11 @@ export default function BaseChip({
           height={20}
           className="
             relative z-10
-            size-[20px]
+            size-4
+            xs:size-[18px]
+            md:size-5
+
+            shrink-0
 
             transition-transform duration-300
 
@@ -183,12 +190,21 @@ export default function BaseChip({
         className="
           relative z-10
 
+          max-w-30
+          truncate
           whitespace-nowrap
 
-          text-base
+          text-xs
           font-medium
           tracking-tight
+
+          xs:max-w-[140px]
+          xs:text-sm
+
+          sm:max-w-none
+          md:text-base
         "
+        title={label}
       >
         {label}
       </span>

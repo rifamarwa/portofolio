@@ -1,36 +1,51 @@
 "use client";
 
-import BaseNavbar from "@/components/base/navbar/navbar";
 import FeaturedProjects from "./components/featured-projects";
 import Techstack from "./components/techstack";
 import ExperienceSection from "./components/experiences";
 import ContactSection from "./components/contact";
 import { useTranslations } from "next-intl";
+import ButtonScroll from "@/components/base/button/button-scroll";
+import { useRef } from "react";
 
 export default function Home() {
   const t = useTranslations("home");
+  const nextSectionRef = useRef<HTMLElement | null>(null);
+
+  const handleScrollNext = () => {
+    nextSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
-    <div>
-      <BaseNavbar />
-      <div className="max-w-3xl h-screen flex flex-col justify-center mb-40">
-        <h1 className="text-7xl font-medium text-shadow-lg pt-20">
-          {t("heroTitle.before")}{" "}
-          <span className="text-primary">{t("heroTitle.highlight")}</span>{" "}
-          {t("heroTitle.after")}
-        </h1>
-        <p className="mt-6 text-2xl leading-relaxed max-w-2xl">
-          {t("heroDescription")}
-        </p>
-      </div>
+    <main className="overflow-hidden">
+      <section className="mx-auto flex min-h-screen w-full max-w-7xl items-center px-4 pb-20 pt-32 sm:px-6 md:pb-28 lg:px-8 relative">
+        <div className="max-w-3xl">
+          <h1 className="text-balance font-medium leading-[1.02] tracking-tighter text-shadow-lg text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 3xl:text-[90px]">
+            {t("heroTitle.before")}{" "}
+            <span className="text-primary">{t("heroTitle.highlight")}</span>{" "}
+            {t("heroTitle.after")}
+          </h1>
 
-      <FeaturedProjects />
+          <p className="mt-6 max-w-2xl text-pretty leading-8 text-foreground/75 md:mt-8 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl md:leading-relaxed">
+            {t("heroDescription")}
+          </p>
+        </div>
+
+        <ButtonScroll onClick={handleScrollNext} />
+      </section>
+
+      <section ref={nextSectionRef}>
+        <FeaturedProjects />
+      </section>
 
       <Techstack />
 
       <ExperienceSection />
 
       <ContactSection />
-    </div>
+    </main>
   );
 }

@@ -1,9 +1,12 @@
 "use client";
 
 import { techGroups } from "@/constants/techstack";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function Techstack() {
+  const t = useTranslations("home");
+
   return (
     <section className="relative overflow-hidden pb-32">
       {/* AMBIENT GLOW */}
@@ -23,14 +26,14 @@ export default function Techstack() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* HEADER */}
-        <div className="mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-            Tech Stack
+
+        <div className="mb-10 max-w-3xl sm:mb-12 md:mb-16">
+          <h2 className="text-balance text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl 2xl:text-5xl 3xl:text-6xl">
+            {t("techstacks.title")}
           </h2>
 
-          <p className="mt-2 text-muted-foreground text-2xl max-w-2xl">
-            Technologies, tools, and ecosystems I work with to craft modern,
-            scalable, and interactive frontend experiences.
+          <p className="mt-4 max-w-2xl text-pretty text-sm leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
+            {t("techstacks.description")}
           </p>
         </div>
 

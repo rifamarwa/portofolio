@@ -41,6 +41,11 @@ const home = {
         "a web-based application used to manage ITM employee rosters and leave.",
     },
   },
+  techstacks: {
+    title: "Tech Stack",
+    description:
+      "Technologies, tools, and ecosystems I work with to craft modern, scalable, and interactive frontend experiences.",
+  },
   experiences: {
     title: "Selected Experience",
     description:

@@ -1,4 +1,5 @@
 import Footer from "@/components/base/footer/footer";
+import BaseNavbar from "@/components/base/navbar/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Image from "next/image";
@@ -8,7 +9,6 @@ export default async function HomeLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-
   params: Promise<{
     locale: string;
   }>;
@@ -19,31 +19,33 @@ export default async function HomeLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <div className="flex flex-col flex-1 items-center justify-center bg-background font-philosopher dark:bg-background relative ">
-        <div className="fixed -bottom-20 right-0 z-10">
+      <div className="relative min-h-dvh overflow-hidden bg-background font-philosopher dark:bg-background">
+        {/* Background Decoration */}
+        <div className="pointer-events-none fixed -bottom-24 right-0 z-0">
           <Image
             src="/assets/background/bg-main-light.png"
-            alt="background"
+            alt=""
             width={1080}
             height={1080}
-            className="opacity-40 w-3xl xl:w-5xl object-cover block dark:hidden"
+            className="block w-130 object-cover opacity-30 dark:hidden sm:w-170 lg:w-215 3xl:w-260"
             priority
           />
 
           <Image
             src="/assets/background/bg-main-dark.png"
-            alt="background"
+            alt=""
             width={1080}
             height={1080}
-            className="opacity-40 w-3xl xl:w-5xl object-cover hidden dark:block"
+            className="hidden w-130 object-cover opacity-30 dark:block sm:w-170 lg:w-215 3xl:w-260"
             priority
           />
         </div>
-        <main className="flex flex-1 w-full max-w-7xl flex-col items-start justify-between z-20">
-          {children}
-        </main>
 
-        <div className="pt-16 w-full">
+        <BaseNavbar />
+
+        <main className="relative z-10 w-full">{children}</main>
+
+        <div className="relative z-10 w-full pt-16">
           <Footer />
         </div>
       </div>
