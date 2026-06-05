@@ -17,6 +17,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
       common: (await import(`./messages/${currentLocale}/common`)).default,
 
       home: (await import(`./messages/${currentLocale}/home`)).default,
+
+      work: (await import(`./messages/${currentLocale}/work`)).default,
     },
   };
 });

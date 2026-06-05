@@ -1,148 +1,123 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/constants/projects";
 import { techRegistry } from "@/constants/techstack";
 import BaseChip from "@/components/base/chip/chip";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 export default function FeaturedProjects() {
   const t = useTranslations("home");
 
   return (
-    <section className="w-full pb-64">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-10">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
+    <section className="w-full px-4 pb-28 pt-20 sm:px-6 sm:pb-36 sm:pt-24 md:pb-44 md:pt-28 lg:px-8 2xl:pb-56 3xl:pb-64">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="mb-10 max-w-3xl sm:mb-12 md:mb-16">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-primary/70 sm:text-sm md:text-base">
+            Selected Works
+          </p>
+
+          <h2 className="text-balance text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl 2xl:text-5xl 3xl:text-6xl">
             {t("projectTitle")}
           </h2>
-          <p className="mt-2 text-muted-foreground text-2xl">
+
+          <p className="mt-4 max-w-2xl text-pretty text-sm leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
             {t("projectDescription")}
           </p>
         </div>
 
-        <div className="columns-1 md:columns-2 xl:columns-3 gap-4 space-y-4">
-          {projects.map((project, index) => (
-            <Link
-              key={project.key}
-              href="/"
-              className="group block break-inside-avoid"
-            >
-              <Card
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  border-border/60
-                  bg-card/70
-                  backdrop-blur-xl
+        <div className="columns-1 gap-4 space-y-4 sm:gap-5 sm:space-y-5 md:columns-2 xl:columns-3 2xl:gap-6 2xl:space-y-6">
+          {projects.map((project, index) => {
+            const techs = project.tech ?? [];
 
-                  transition-all duration-500 ease-out
-
-                  hover:-translate-y-2
-                  hover:border-primary-400/40
-
-                  hover:shadow-[0_0_40px_rgba(214,113,55,0.15),
-                                0_20px_80px_rgba(214,113,55,0.12)]
-
-                  dark:hover:shadow-[0_0_50px_rgba(214,113,55,0.18),
-                                    0_30px_90px_rgba(214,113,55,0.14)]
-                                    before:absolute
-                  before:inset-0
-                  before:bg-linear-to-b
-                  before:from-white/5
-                  before:to-transparent
-                  before:opacity-0
-                  hover:before:opacity-100
-                  before:transition-opacity
-                "
+            return (
+              <Link
+                key={project.key}
+                href="/"
+                className="group block break-inside-avoid"
               >
-                <div
+                <Card
                   className="
-                    absolute inset-0 opacity-0
-                    transition-opacity duration-500
-                    group-hover:opacity-100
-                    bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.18),transparent_60%)]
-                    pointer-events-none
+                    group relative overflow-hidden
+                    rounded-3xl border-border/60
+                    bg-card/70 backdrop-blur-xl
+                    transition-all duration-500 ease-out
+                    hover:-translate-y-2 hover:border-primary/40
+                    hover:shadow-[0_0_40px_rgba(214,113,55,0.15),0_20px_80px_rgba(214,113,55,0.12)]
+                    dark:hover:shadow-[0_0_50px_rgba(214,113,55,0.18),0_30px_90px_rgba(214,113,55,0.14)]
+                    before:absolute before:inset-0
+                    before:bg-linear-to-b before:from-white/5 before:to-transparent
+                    before:opacity-0 before:transition-opacity
+                    hover:before:opacity-100
                   "
-                />
-                <CardContent className="relative z-10 p-5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl text-muted-foreground">
-                      0{index + 1}
-                    </span>
+                >
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.18),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                    <ArrowUpRight className="size-5 opacity-50 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
-                  </div>
+                  <CardContent className="relative z-10 p-4 sm:p-5 md:p-6">
+                    <div className="flex items-center justify-between">
+                      <span className="text-base text-muted-foreground sm:text-lg md:text-xl">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
 
-                  <div className="mt-5">
-                    <h3 className="text-3xl font-semibold tracking-tight">
-                      {t(`projects.${project.key}.title`)}
-                    </h3>
+                      <ArrowUpRight className="size-5 opacity-50 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+                    </div>
 
-                    <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-                      {t(`projects.${project.key}.description`)}
-                    </p>
-                  </div>
+                    <div className="mt-5">
+                      <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl xl:text-3xl 2xl:text-4xl">
+                        {t(`projects.${project.key}.title`)}
+                      </h3>
 
-                  {/* IMAGE PREVIEW */}
-                  <div
-                    className={`
-                      relative mt-6 overflow-hidden rounded-2xl border border-white/10
-                      ${
-                        index % 3 === 0
-                          ? "h-80"
-                          : index % 2 === 0
-                            ? "h-55"
-                            : "h-65"
-                      }
-                    `}
-                  >
-                    <Image
-                      src={project.images}
-                      alt={project.key}
-                      width={400}
-                      height={400}
-                      className="
-                      h-full w-full object-cover
-                      transition-transform duration-700
-                      group-hover:scale-105
-                    "
-                    />
+                      <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base md:text-lg md:leading-relaxed">
+                        {t(`projects.${project.key}.description`)}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
+                      {techs.map((tech) => {
+                        const item = techRegistry[tech];
+
+                        return (
+                          <BaseChip
+                            key={tech}
+                            label={tech}
+                            icon={item?.icon}
+                            variant={item?.variant}
+                          />
+                        );
+                      })}
+                    </div>
 
                     <div
-                      className="
-                        absolute inset-0
-                        bg-linear-to-t
-                        from-black/30
-                        to-transparent
-                      "
-                    />
-                  </div>
+                      className={`
+                        relative mt-6 overflow-hidden rounded-2xl border border-white/10
+                        h-64 sm:h-72 md:h-80
+                        ${
+                          index % 3 === 0
+                            ? "lg:h-80 2xl:h-96"
+                            : index % 2 === 0
+                              ? "lg:h-56 2xl:h-64"
+                              : "lg:h-64 2xl:h-72"
+                        }
+                      `}
+                    >
+                      <Image
+                        src={project.images}
+                        alt={project.key}
+                        width={700}
+                        height={700}
+                        className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                      />
 
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    {project.tech.map((item) => {
-                      const tech = techRegistry?.[item];
-
-                      if (!tech) return null;
-
-                      return (
-                        <BaseChip
-                          key={item}
-                          label={item}
-                          icon={tech.icon}
-                          variant={tech.variant}
-                        />
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+                      <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

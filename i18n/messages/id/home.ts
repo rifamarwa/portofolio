@@ -46,6 +46,13 @@ const home = {
         "Aplikasi berbasis web yang digunakan untuk mengelola roster dan cuti karyawan ITM.",
     },
   },
+
+  techstacks: {
+    title: "Tech Stack",
+    description:
+      "Teknologi, tools, dan ekosistem yang saya gunakan untuk merancang pengalaman frontend modern yang scalable, interaktif, dan nyaman digunakan.",
+  },
+
   experiences: {
     title: "Pengalaman",
     description:
