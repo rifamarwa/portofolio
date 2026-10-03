@@ -37,7 +37,7 @@ export default function WorkAllProjects({
               return (
                 <Link
                   key={project.key}
-                  href="/"
+                  href={`/work/${project.key}`}
                   className={`group block ${sizeClass}`}
                 >
                   <Card

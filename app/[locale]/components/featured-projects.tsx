@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
             return (
               <Link
                 key={project.key}
-                href="/"
+                href={`/work/${project.key}`}
                 className="group block break-inside-avoid"
               >
                 <Card

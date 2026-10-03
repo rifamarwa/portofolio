@@ -23,7 +23,7 @@ export default async function HomeLayout({
         {/* Background Decoration */}
         <div className="pointer-events-none fixed -bottom-24 right-0 z-0">
           <Image
-            src="/assets/background/bg-main-light.png"
+            src="/assets/background/bg-main-light-2.png"
             alt=""
             width={1080}
             height={1080}
