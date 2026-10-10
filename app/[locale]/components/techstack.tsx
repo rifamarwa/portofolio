@@ -32,7 +32,7 @@ export default function Techstack() {
             {t("techstacks.title")}
           </h2>
 
-          <p className="mt-4 max-w-2xl text-pretty text-sm leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
+          <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
             {t("techstacks.description")}
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Techstack() {
               <div className="mb-6 flex items-center gap-5">
                 <div className="h-px flex-1 bg-linear-to-r from-transparent via-border to-border" />
 
-                <h3 className="shrink-0 text-3xl font-medium text-primary-400">
+                <h3 className="shrink-0 text-3xl font-medium text-link">
                   {group.title}
                 </h3>
 
@@ -97,7 +97,7 @@ export default function Techstack() {
                           rounded-[30px]
 
                           border border-border/40
-                          bg-card/70
+                          bg-card
 
                           px-9 py-7
 
@@ -112,12 +112,12 @@ export default function Techstack() {
                           hover:bg-background/60
 
                           /* LIGHT MODE DEPTH */
-                          shadow-[0_8px_30px_rgba(44,37,31,0.06)]
+                          shadow-[0_8px_30px_rgba(48,45,50,0.06)]
 
                           /* DARK MODE DEPTH */
                           dark:shadow-none
 
-                          hover:shadow-[0_20px_60px_rgba(214,113,55,0.12)]
+                          hover:shadow-[0_20px_60px_rgba(193,131,144,0.12)]
                         "
                       >
                         <div
@@ -129,7 +129,7 @@ export default function Techstack() {
 
                             group-hover:opacity-100
 
-                            bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.10),transparent_70%)]
+                            bg-[radial-gradient(circle_at_top,rgba(193,131,144,0.10),transparent_70%)]
 
                             pointer-events-none
                           "
@@ -144,7 +144,7 @@ export default function Techstack() {
 
                             group-hover:opacity-100
 
-                            bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.16),transparent_70%)]
+                            bg-[radial-gradient(circle_at_top,rgba(193,131,144,0.16),transparent_70%)]
 
                             pointer-events-none
                           "

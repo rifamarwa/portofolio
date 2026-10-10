@@ -8,6 +8,7 @@ import WorkAllProjects from "./components/work-all-projects";
 import WorkSearch from "./components/work-search";
 import WorkBanner from "./components/work-banner";
 import WorkFeaturedProjects from "./components/work-featured-projects";
+import WorkCompanies from "@/app/[locale]/work/components/work-companies";
 
 export default function Work() {
   const t = useTranslations("work");
@@ -60,13 +61,13 @@ export default function Work() {
       />
 
       <section ref={nextSectionRef}>
-        <WorkFeaturedProjects {...{ t, featuredProjects }} />
+        <WorkCompanies label={t("companies.title")} />
       </section>
 
-      <section className="flex flex-col gap-16 w-full items-center">
+      <section className="flex flex-col gap-12 w-full items-center px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <div className="text-center">
-            <p className="mb-3 text-base uppercase tracking-[0.3em] text-primary-400/80">
+            <p className="mb-3 text-base uppercase tracking-[0.3em] text-link">
               {t("archive.label")}
             </p>
 

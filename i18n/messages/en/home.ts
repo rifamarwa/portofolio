@@ -90,8 +90,8 @@ const home = {
     label: "Let’s Build Something",
     title: {
       before: "Designing scalable experiences with",
-      highlight: "kejelasan",
-      after: ", performance, and modern frontend architecture.",
+      highlight: "clarity",
+      after: "performance, and modern frontend architecture.",
     },
     description:
       " Currently focused on enterprise frontend systems, interactive user experiences, and scalable React/Next.js applications.",

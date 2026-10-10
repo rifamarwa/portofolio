@@ -29,11 +29,11 @@ export default function ContactSection() {
         {/* LABEL */}
         <p
           className="
-            text-sm
+            text-base
             uppercase
             tracking-[0.35em]
 
-            text-primary-400
+            text-link
           "
         >
           {t("contact.label")}
@@ -54,7 +54,7 @@ export default function ContactSection() {
           "
         >
           {t("contact.title.before")}{" "}
-          <span className="text-primary">{t("contact.title.highlight")}</span>
+          <span className="text-link">{t("contact.title.highlight")}</span>
           {", "}
           {t("contact.title.after")}
         </h2>
@@ -99,12 +99,12 @@ export default function ContactSection() {
 
               text-lg
               font-medium
-              text-white
+              text-primary-foreground
 
               transition-all duration-300
 
               hover:-translate-y-1
-              hover:shadow-[0_10px_40px_rgba(214,113,55,0.35)]
+              hover:shadow-[0_10px_40px_rgba(193,131,144,0.35)]
             "
           >
             <Mail className="size-5" />
@@ -130,7 +130,7 @@ export default function ContactSection() {
               rounded-full
 
               border border-border/60
-              bg-card/50
+              bg-card
 
               px-7 py-4
 
@@ -144,9 +144,9 @@ export default function ContactSection() {
               hover:-translate-y-1
               hover:border-primary-400/40
 
-              hover:shadow-[0_10px_40px_rgba(44,37,31,0.08)]
+              hover:shadow-[0_10px_40px_rgba(48,45,50,0.08)]
 
-              dark:hover:shadow-[0_0_40px_rgba(214,113,55,0.10)]
+              dark:hover:shadow-[0_0_40px_rgba(193,131,144,0.10)]
             "
           >
             <Image
@@ -168,7 +168,7 @@ export default function ContactSection() {
               rounded-full
 
               border border-border/60
-              bg-card/50
+              bg-card
 
               px-7 py-4
 
@@ -182,9 +182,9 @@ export default function ContactSection() {
               hover:-translate-y-1
               hover:border-primary-400/40
 
-              hover:shadow-[0_10px_40px_rgba(44,37,31,0.08)]
+              hover:shadow-[0_10px_40px_rgba(48,45,50,0.08)]
 
-              dark:hover:shadow-[0_0_40px_rgba(214,113,55,0.10)]
+              dark:hover:shadow-[0_0_40px_rgba(193,131,144,0.10)]
             "
           >
             <Image
@@ -206,7 +206,7 @@ export default function ContactSection() {
             rounded-full
 
             border border-border/60
-            bg-card/40
+            bg-card
 
             px-5 py-3
 
@@ -219,7 +219,7 @@ export default function ContactSection() {
           <div
             className="
               size-2 rounded-full
-              bg-green-500
+              bg-accent-500
 
               animate-pulse
             "

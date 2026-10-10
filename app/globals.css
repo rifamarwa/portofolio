@@ -4,136 +4,105 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* =========================================================
-   LIGHT MODE (Coklat Muda / Nude / Warm Beige)
-   ========================================================= */
+/* One shared palette for Home, Work, About and project details.
+   Rose: #C18390; sage: #DFE8D6; charcoal: #302D32.
+   The link token uses darker rose ink for readable text in light mode. */
 :root {
-  /* Scale Dasar - Warna Nude/Coklat Muda untuk Light Mode */
-  --background: #fdfaf6; /* Putih tulang/nude sangat terang */
-  --foreground: #2c251f; /* Coklat tua pekat untuk teks */
-
-  /* Color Scales: Primary (Terracotta/Warm Brown) */
-  --primary-50: #fdf6f0;
-  --primary-100: #faebd9;
-  --primary-200: #f3d4b6;
-  --primary-300: #ebb688;
-  --primary-400: #e2925b;
-  --primary-500: #d67137; /* Base Primary Accent */
-  --primary-600: #b38b63; /* Nilai original mu */
-  --primary-700: #a44824;
-  --primary-800: #843c22;
-  --primary-900: #6a3320;
-  --primary-950: #39180e;
-
-  /* Color Scales: Secondary (Muted Nude/Tan) */
-  --secondary-50: #faf8f6;
-  --secondary-100: #f2ebe4;
-  --secondary-200: #e5d6cb;
-  --secondary-300: #d1bba9;
-  --secondary-400: #bba08a;
-  --secondary-500: #a68971; /* Base Secondary */
-  --secondary-600: #9a765c;
-  --secondary-700: #805f4c;
-  --secondary-800: #695041;
-  --secondary-900: #554236;
-  --secondary-950: #2d221c;
-
-  /* Color Scales: Accent (Warm Gold / Ochre) */
-  --accent-50: #fcf9f2;
-  --accent-100: #f7efe1;
-  --accent-200: #efdcbf;
-  --accent-300: #e4c193;
-  --accent-400: #d7a264;
-  --accent-500: #cb853e;
-  --accent-600: #bb6e32;
-  --accent-700: #9b542b;
-  --accent-800: #7d4427;
-  --accent-900: #653823;
-  --accent-950: #381b10;
-
-  /* Status Colors */
-  --warning-50: #fffaf0;
-  --warning-100: #feebc8;
-  --warning-500: #ed8936;
-  --warning-900: #7b341e;
-
-  --error-50: #fef2f2;
-  --error-100: #fee2e2;
-  --error-500: #ef4444;
-  --error-900: #7f1d1d;
-
-  /* Shadcn Semantic Variables - Light Mode */
-  --primary: var(--primary-600);
-  --primary-foreground: var(--primary-50);
-
-  --secondary: var(--secondary-200);
-  --secondary-foreground: var(--secondary-900);
-
-  --accent-semantic: var(--accent-100);
-  --accent-foreground: var(--accent-900);
-
-  --destructive: var(--error-500);
-  --destructive-foreground: var(--error-50);
-
-  --muted: var(--secondary-100);
-  --muted-foreground: var(--secondary-600); /* #A6968B analog */
-
+  color-scheme: light;
+  --background: #f6f5f3;
+  --foreground: #302d32;
+  --rose: #c18390;
+  --sage: #dfe8d6;
+  --charcoal: #302d32;
+  --primary-50: #faf5f6;
+  --primary-100: #f3e6e9;
+  --primary-200: #e9ccd3;
+  --primary-300: #dbaeb9;
+  --primary-400: #cd96a3;
+  --primary-500: #c18390;
+  --primary-600: #a66a79;
+  --primary-700: #875260;
+  --primary-800: #704450;
+  --primary-900: #5c3943;
+  --primary-950: #33232b;
+  --secondary-50: #f8f7f8;
+  --secondary-100: #eeecef;
+  --secondary-200: #dfdbe1;
+  --secondary-300: #c6bfc9;
+  --secondary-400: #a79cab;
+  --secondary-500: #8c7e92;
+  --secondary-600: #736779;
+  --secondary-700: #5e5463;
+  --secondary-800: #49414e;
+  --secondary-900: #302d32;
+  --secondary-950: #17161c;
+  --accent-50: #f5f8f1;
+  --accent-100: #edf2e7;
+  --accent-200: #dfe8d6;
+  --accent-300: #c3d2b5;
+  --accent-400: #a4ba92;
+  --accent-500: #829d70;
+  --accent-600: #667e55;
+  --accent-700: #4c603f;
+  --accent-800: #3e4e34;
+  --accent-900: #303d29;
+  --accent-950: #1d281b;
+  --primary: var(--rose);
+  --primary-foreground: #17161c;
+  --secondary: #eeecef;
+  --secondary-foreground: var(--charcoal);
+  --accent-semantic: var(--sage);
+  --accent-foreground: var(--charcoal);
+  --link: var(--primary-700);
+  --sage-ink: var(--accent-700);
+  --muted: #ece9eb;
+  --muted-foreground: #69616b;
   --card: #ffffff;
   --card-foreground: var(--foreground);
-  --popover: #ffffff;
+  --popover: var(--card);
   --popover-foreground: var(--foreground);
-
-  --border: #f2ebe4;
-  --input: var(--secondary-200);
-  --ring: var(--primary-400);
-
+  --border: #ded9de;
+  --input: var(--border);
+  --ring: var(--rose);
+  --panel-rose: #f0e2e6;
+  --panel-sage: var(--sage);
+  --section: #efeeec;
+  --navbar: var(--card);
+  --inverse: var(--charcoal);
+  --inverse-foreground: #f6f5f3;
+  --inverse-muted: #ddd5dd;
+  --destructive: #b33a4c;
+  --destructive-foreground: #ffffff;
   --radius: 0.625rem;
 }
 
-/* =========================================================
-   DARK MODE (Coklat Gelap / Warm Sepia)
-   ========================================================= */
 .dark {
-  /* Override warna dasar untuk Dark Mode (Givanka Signature) */
-  --background: #2c2720; /* Coklat Sepia Gelap */
-  --foreground: #e6d8cc; /* Teks Warm Beige */
-
-  /* Shadcn Semantic Variables - Dark Mode */
-  --primary: var(
-    --primary-500
-  ); /* Sedikit lebih terang di dark mode agar pop */
-  --primary-foreground: #1a1513;
-
-  --secondary: var(--secondary-800);
-  --secondary-foreground: var(--secondary-100);
-
-  --accent-semantic: var(--accent-800);
-  --accent-foreground: var(--accent-100);
-
-  --destructive: var(--error-900);
-  --destructive-foreground: var(--error-100);
-
-  --muted: var(--secondary-900);
-  --muted-foreground: var(--secondary-400);
-
-  --card: #241c19; /* Latar Card Bento Grid */
-  --card-foreground: var(--foreground);
-  --popover: #241c19;
-  --popover-foreground: var(--foreground);
-
-  --border: #3a2e2a; /* Garis tepi subtle */
-  --input: #3a2e2a;
-  --ring: var(--primary-600);
+  color-scheme: dark;
+  --background: #17161c;
+  --foreground: #f6f5f3;
+  --secondary: #302d32;
+  --secondary-foreground: #f6f5f3;
+  --accent-semantic: #293129;
+  --accent-foreground: var(--sage);
+  --link: #dbaeb9;
+  --sage-ink: var(--sage);
+  --muted: #302b35;
+  --muted-foreground: #bbb1c0;
+  --card: #242128;
+  --border: #403a45;
+  --panel-rose: #352731;
+  --panel-sage: #293129;
+  --section: #1d1b23;
+  --destructive: #f29ca7;
+  --destructive-foreground: #17161c;
 }
 
-/* =========================================================
-   TAILWIND v4 THEME REGISTRATION
-   ========================================================= */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Mendaftarkan Scale 50-900 agar bisa dipakai misal: bg-primary-500 */
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+  --color-charcoal: var(--charcoal);
   --color-primary-50: var(--primary-50);
   --color-primary-100: var(--primary-100);
   --color-primary-200: var(--primary-200);
@@ -145,7 +114,6 @@
   --color-primary-800: var(--primary-800);
   --color-primary-900: var(--primary-900);
   --color-primary-950: var(--primary-950);
-
   --color-secondary-50: var(--secondary-50);
   --color-secondary-100: var(--secondary-100);
   --color-secondary-200: var(--secondary-200);
@@ -157,106 +125,102 @@
   --color-secondary-800: var(--secondary-800);
   --color-secondary-900: var(--secondary-900);
   --color-secondary-950: var(--secondary-950);
-
-  /* Daftarkan warna semantik Shadcn */
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+  --color-accent-950: var(--accent-950);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent-semantic); /* Perbaikan tabrakan nama */
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-
+  --color-link: var(--link);
+  --color-sage-ink: var(--sage-ink);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
-  --color-navbar: #453729;
-  --color-navbar-light: #e5d6cb;
-
-  --font-sans: var(--font-sans);
+  --color-panel-rose: var(--panel-rose);
+  --color-panel-sage: var(--panel-sage);
+  --color-section: var(--section);
+  --color-inverse: var(--inverse);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-inverse-muted: var(--inverse-muted);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent: var(--accent-semantic);
+  --color-navbar: var(--navbar);
+  --color-navbar-light: var(--navbar);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-philosopher: var(--font-philosopher);
-
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
-
-  --breakpoint-2xl-only: 90rem; /* 1440px */
-  --breakpoint-3xl: 120rem; /* 1920px */
-}
-
-/* =========================================================
-   BASE STYLES
-   ========================================================= */
-body {
-  /* Dihapus color: #ffffff agar mengikuti color-foreground dinamis */
-  font-family: var(--font-philosopher);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p,
-input,
-textarea,
-a,
-Link {
-  font-family: var(--font-philosopher);
+  --breakpoint-2xl-only: 90rem;
+  --breakpoint-3xl: 120rem;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+  * { @apply border-border outline-ring/50; }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-philosopher), Georgia, serif;
+    font-size: 1rem;
   }
-  html {
-    /* Mencegah lompatan layout saat scrollbar muncul */
-    scrollbar-gutter: stable;
+  html { scrollbar-gutter: stable; }
+  ::selection {
+    background: color-mix(in srgb, var(--rose) 35%, transparent);
+    color: var(--foreground);
   }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 4px;
+  }
+}
+
+/* Abstract arches and a soft sage wash, shared by every page. */
+.portfolio-background {
+  background-image:
+    radial-gradient(ellipse at 96% 90%, color-mix(in srgb, var(--rose) 7%, transparent), transparent 52%),
+    radial-gradient(ellipse at 4% 18%, color-mix(in srgb, var(--sage) 16%, transparent), transparent 42%);
+}
+.dark .portfolio-background {
+  background-image:
+    radial-gradient(ellipse at 96% 90%, color-mix(in srgb, var(--rose) 6%, transparent), transparent 52%),
+    radial-gradient(ellipse at 4% 18%, color-mix(in srgb, var(--sage) 4%, transparent), transparent 42%);
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
 @keyframes marquee-reverse {
-  from {
-    transform: translateX(-50%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
-
 .animate-marquee {
   animation: marquee 40s linear infinite;
   will-change: transform;
 }
-
 .animate-marquee-reverse {
   animation: marquee-reverse 40s linear infinite;
   will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  [class*="marquee"] { animation: none !important; }
 }

@@ -67,10 +67,10 @@ function ExperienceCard({
 
             hover:border-primary-400/40
 
-            hover:shadow-[0_10px_50px_rgba(44,37,31,0.10)]
+            hover:shadow-[0_10px_50px_rgba(48,45,50,0.10)]
 
-            dark:hover:shadow-[0_0_50px_rgba(214,113,55,0.14),
-                              0_20px_100px_rgba(214,113,55,0.08)]
+            dark:hover:shadow-[0_0_50px_rgba(193,131,144,0.14),
+                              0_20px_100px_rgba(193,131,144,0.08)]
           "
       >
         {/* GLOW */}
@@ -83,7 +83,7 @@ function ExperienceCard({
 
               group-hover:opacity-100
 
-              bg-[radial-gradient(circle_at_top_right,rgba(214,113,55,0.14),transparent_60%)]
+              bg-[radial-gradient(circle_at_top_right,rgba(193,131,144,0.14),transparent_60%)]
             "
         />
 
@@ -93,7 +93,7 @@ function ExperienceCard({
             <div>
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-primary-400">
+                  <p className="text-base uppercase tracking-[0.25em] text-link">
                     {experience.period}
                   </p>
 
@@ -105,7 +105,7 @@ function ExperienceCard({
                     {experience.role}
                   </p>
 
-                  <p className="mt-2 text-base text-muted-foreground/70">
+                  <p className="mt-2 text-base text-muted-foreground">
                     {t(`experiences.${experience.key}.location`)}
                   </p>
                 </div>

@@ -12,7 +12,11 @@ const work = {
   stats: {
     projects: "Projects",
     technologies: "Technologies",
-    featured: "Featured",
+    companies: "Companies",
+  },
+
+  companies: {
+    title: "Companies I've Worked With",
   },
 
   featured: {
