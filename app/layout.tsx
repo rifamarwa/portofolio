@@ -22,8 +22,26 @@ const philosopher = Philosopher({
 });
 
 export const metadata: Metadata = {
-  title: "Rifa",
-  description: "Portfolio",
+  title: {
+    default: "Rifa Marwa — Frontend Developer",
+    template: "%s — Rifa Marwa",
+  },
+  description:
+    "Frontend developer building responsive and intuitive web experiences with React, Next.js, Vue, and TypeScript.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon_light.ico",
+        type: "image/x-icon",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon_dark.ico",
+        type: "image/x-icon",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

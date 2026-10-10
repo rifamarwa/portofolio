@@ -7,7 +7,6 @@ import { allProjects } from "@/constants/projects";
 import WorkAllProjects from "./components/work-all-projects";
 import WorkSearch from "./components/work-search";
 import WorkBanner from "./components/work-banner";
-import WorkFeaturedProjects from "./components/work-featured-projects";
 import WorkCompanies from "@/app/[locale]/work/components/work-companies";
 
 export default function Work() {
