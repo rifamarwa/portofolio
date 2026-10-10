@@ -13,7 +13,7 @@ const ToggleTheme = dynamic(() => import("../toggle/toggle-theme"), {
   ssr: false,
 });
 
-const navItems = ["Work", "About", "Contact", "Blog"];
+const navItems = ["Work", "About"];
 
 export default function BaseNavbar() {
   const pathname = usePathname();

@@ -56,7 +56,7 @@ export default function DetailWork() {
   const description = t(`projects.${project.key}.description`);
 
   return (
-    <main className="min-h-screen overflow-hidden">
+    <main className="min-h-screen overflow-hidden tes ">
       <section className="relative overflow-hidden px-6 py-28 md:px-10 lg:px-16">
         <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-primary-400/10 blur-3xl" />
         <div className="absolute bottom-10 right-0 h-96 w-96 rounded-full bg-primary-400/10 blur-3xl" />
@@ -101,15 +101,43 @@ export default function DetailWork() {
           <div className="relative">
             <div className="absolute -inset-4 rounded-4xl bg-primary-400/20 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 shadow-2xl">
-              <Image
-                src={project.images}
-                alt={title}
-                width={1200}
-                height={900}
-                className="h-auto w-full object-cover"
-                priority
-              />
+            <div className="relative">
+              {project.url && (
+                <div className="mb-3 flex justify-end">
+                  <Link
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                    mt-8 inline-flex items-center gap-2
+                    rounded-full
+                    border border-primary-400/30
+                    bg-primary-500/25
+                    px-5 py-2.5
+                    text-lg font-medium text-primary-300
+                    transition
+                    hover:border-primary-400/50
+                    hover:bg-primary-400/15
+          "
+                  >
+                    Live Project
+                    <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </Link>
+                </div>
+              )}
+
+              <div className="overflow-hidden rounded-4xl border border-white/10 bg-white/5 shadow-2xl">
+                <Image
+                  src={project.images}
+                  alt={title}
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -131,7 +131,7 @@ export const projectDetails: Record<string, IProjectDetail> = {
         "The redesigned homepage created a stronger first impression, clearer content flow, and a more modern company profile experience that better reflects BTS.id’s identity as a technology company.",
     },
 
-    companyCode: "BTS",
+    companyCode: "BTS.id",
   },
 
   biofarma: {
