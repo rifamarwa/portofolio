@@ -12,7 +12,11 @@ const work = {
   stats: {
     projects: "Proyek",
     technologies: "Teknologi",
-    featured: "Unggulan",
+    companies: "Perusahaan",
+  },
+
+  companies: {
+    title: "Perusahaan Tempat Saya Berkarya",
   },
 
   featured: {

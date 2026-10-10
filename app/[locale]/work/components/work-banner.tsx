@@ -2,14 +2,13 @@
 "use client";
 
 import ButtonScroll from "@/components/base/button/button-scroll";
+import { allCompanies } from "@/constants/company";
 import { allProjects } from "@/constants/projects";
-import { IProject } from "@/interfaces/project.interface";
 import { useEffect, useRef, useState } from "react";
 
 interface IWorkBanner {
   t: any;
   techStacks: string[];
-  featuredProjects: IProject[];
   onScrollNext: () => void;
 }
 
@@ -54,7 +53,6 @@ function CountUp({
 export default function WorkBanner({
   t,
   techStacks,
-  featuredProjects,
   onScrollNext,
 }: Readonly<IWorkBanner>) {
   const statsRef = useRef<HTMLDivElement | null>(null);
@@ -70,8 +68,8 @@ export default function WorkBanner({
       label: t("stats.technologies"),
     },
     {
-      value: featuredProjects.length,
-      label: t("stats.featured"),
+      value: allCompanies.length,
+      label: t("stats.companies"),
     },
   ];
 
@@ -97,7 +95,7 @@ export default function WorkBanner({
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-background px-4 py-24">
+    <section className="relative flex min-h-screen items-center overflow-hidden px-4 py-24">
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
           <div
@@ -106,11 +104,11 @@ export default function WorkBanner({
               border border-primary/20
               bg-primary/5
               px-4 py-2
-              text-xs uppercase tracking-[0.32em]
-              text-primary
-              shadow-[0_8px_30px_rgba(80,55,40,0.05)]
+              text-base uppercase tracking-[0.32em]
+              text-link
+              shadow-[0_8px_30px_rgba(48,45,50,0.05)]
               backdrop-blur-md
-              dark:shadow-[0_0_40px_rgba(253,186,116,0.08)]
+              dark:shadow-[0_0_40px_rgba(193,131,144,0.08)]
             "
           >
             Selected Works
@@ -131,10 +129,10 @@ export default function WorkBanner({
             mx-auto mt-16 grid max-w-3xl grid-cols-3 overflow-hidden
             rounded-3xl
             border border-border
-            bg-card/70
-            shadow-[0_20px_60px_rgba(71,60,53,0.08)]
+            bg-card
+            shadow-[0_20px_60px_rgba(48,45,50,0.08)]
             backdrop-blur-xl
-            dark:bg-card/40
+            dark:bg-card
             dark:shadow-2xl dark:shadow-black/30
           "
         >
@@ -153,7 +151,7 @@ export default function WorkBanner({
                 />
               </span>
 
-              <span className="mt-2 text-xs uppercase tracking-[0.22em] text-muted-foreground md:text-sm">
+              <span className="mt-2 text-base leading-6 text-muted-foreground">
                 {item.label}
               </span>
             </div>

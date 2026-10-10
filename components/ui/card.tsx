@@ -12,7 +12,7 @@ function Card({
       data-slot="card"
       data-size={size}
       className={cn(
-        "group/card flex flex-col gap-4 overflow-hidden rounded-2xl bg-linear-to-b from-white to-[#f9f4ee] dark:from-card dark:to-card py-4 text-sm text-card-foreground ring-1 ring-black/4 dark:ring-white/6 shadow-[0_4px_20px_rgba(44,37,31,0.04)] dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_40px_rgba(44,37,31,0.08)] dark:hover:shadow-[0_0_40px_rgba(214,113,55,0.10)] before:absolute before:inset-0 before:opacity-[0.015] before:bg-[url('/noise.png')] before:pointer-events-none",
+        "group/card relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-border bg-card py-4 text-base text-card-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10",
         className,
       )}
       {...props}
@@ -38,7 +38,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-title"
       className={cn(
-        "text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",
+        "text-base leading-snug font-medium group-data-[size=sm]/card:text-base",
         className,
       )}
       {...props}
@@ -50,7 +50,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn("text-sm text-muted-foreground", className)}
+      className={cn("text-base text-muted-foreground", className)}
       {...props}
     />
   );

@@ -15,28 +15,27 @@ interface IWorkSearch {
 }
 
 export default function WorkSearch({
-  search,
-  t,
-  techStacks,
-  selectedTech,
-  setSearch,
-  setSelectedTech,
+  search, t, techStacks, selectedTech, setSearch, setSelectedTech,
 }: Readonly<IWorkSearch>) {
   return (
-    <div className="rounded-2xl border border-[#fdfaf6]/15 bg-[#fdfaf6]/5 p-4 shadow-2xl backdrop-blur-md md:p-6 max-w-7xl">
+    <div className="w-full max-w-7xl rounded-3xl border border-border bg-card p-5 shadow-sm md:p-8">
+      <label htmlFor="project-search" className="sr-only">
+        {t("searchPlaceholder")}
+      </label>
       <input
+        id="project-search"
+        type="search"
         value={search}
         onChange={(event) => setSearch(event.target.value)}
         placeholder={t("searchPlaceholder")}
-        className="h-12 w-full rounded-xl border border-[#fdfaf6]/10 bg-black/30 px-4 text-base text-[#fdfaf6] outline-none transition placeholder:text-[#fdfaf6]/35 focus:border-orange-300/50"
+        className="h-14 w-full rounded-2xl border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/25"
       />
 
-      <div className="mt-5 grid gap-5 md:grid-cols-[120px_1fr] md:items-start">
-        <p className="text-base uppercase tracking-[0.2em] text-[#fdfaf6]/45">
+      <div className="mt-6 grid gap-4 md:grid-cols-[140px_1fr] md:items-start">
+        <p className="pt-2 text-base font-medium text-muted-foreground">
           {t("techStack")}
         </p>
-
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {techStacks.map((item) => {
             const tech = (techRegistry as any)?.[item];
             const isSelected = selectedTech === item;
@@ -45,9 +44,7 @@ export default function WorkSearch({
               <button
                 key={item}
                 type="button"
-                onClick={() =>
-                  setSelectedTech((prev) => (prev === item ? "All" : item))
-                }
+                onClick={() => setSelectedTech((prev) => prev === item ? "All" : item)}
                 aria-pressed={isSelected}
                 className="cursor-pointer rounded-full"
               >
@@ -55,19 +52,9 @@ export default function WorkSearch({
                   label={item === "All" ? t("all") : item}
                   icon={tech?.icon}
                   variant={tech?.variant}
-                  className={
-                    isSelected
-                      ? `
-                      -translate-y-0.5
-                      border-orange-300/70
-                      bg-orange-400/20
-                      text-orange-100
-                      shadow-[0_0_24px_rgba(251,146,60,0.25)]
-                      ring-1
-                      ring-orange-300/40
-                    `
-                      : ""
-                  }
+                  className={isSelected
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/25"
+                    : ""}
                 />
               </button>
             );

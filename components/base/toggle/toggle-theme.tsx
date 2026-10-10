@@ -30,6 +30,7 @@ export default function ToggleTheme() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       className="
         rounded-xl
         bg-card

@@ -5,7 +5,7 @@ import BaseChip from "@/components/base/chip/chip";
 import { techRegistry } from "@/constants/techstack";
 import { IProject } from "@/interfaces/project.interface";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface IWorkFeaturedProjects {
   t: any;
@@ -21,7 +21,7 @@ export default function WorkFeaturedProjects({
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="mb-3 text-base uppercase tracking-[0.3em] text-primary/80">
+            <p className="mb-3 text-base uppercase tracking-[0.3em] text-link">
               {t("featured.label")}
             </p>
 
@@ -47,17 +47,17 @@ export default function WorkFeaturedProjects({
                   group grid gap-8
                   rounded-3xl
                   border border-border
-                  bg-card/70
+                  bg-card
                   p-5
-                  shadow-[0_16px_50px_rgba(71,60,53,0.05)]
+                  shadow-[0_16px_50px_rgba(48,45,50,0.05)]
                   transition
                   hover:border-primary/35
                   hover:bg-card
-                  hover:shadow-[0_22px_60px_rgba(71,60,53,0.08)]
+                  hover:shadow-[0_22px_60px_rgba(48,45,50,0.08)]
                   md:grid-cols-[0.65fr_1fr]
                   md:p-8
 
-                  dark:bg-card/50
+                  dark:bg-card
                   dark:shadow-none
                   dark:hover:bg-card/75
                 "
@@ -110,7 +110,7 @@ export default function WorkFeaturedProjects({
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-fit items-center gap-2 text-base text-foreground/70 transition hover:text-primary"
+                        className="inline-flex w-fit items-center gap-2 text-base text-foreground/70 transition hover:text-link"
                       >
                         {t("viewCaseStudy")}
 

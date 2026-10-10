@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
@@ -16,7 +16,7 @@ export default function FeaturedProjects() {
     <section className="w-full px-4 pb-28 pt-20 sm:px-6 sm:pb-36 sm:pt-24 md:pb-44 md:pt-28 lg:px-8 2xl:pb-56 3xl:pb-64">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-10 max-w-3xl sm:mb-12 md:mb-16">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-primary/70 sm:text-sm md:text-base">
+          <p className="mb-3 text-base uppercase tracking-[0.3em] text-link sm:text-base md:text-base">
             Selected Works
           </p>
 
@@ -24,7 +24,7 @@ export default function FeaturedProjects() {
             {t("projectTitle")}
           </h2>
 
-          <p className="mt-4 max-w-2xl text-pretty text-sm leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
+          <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-muted-foreground xs:text-base sm:text-lg md:mt-5 md:text-xl md:leading-relaxed lg:text-2xl">
             {t("projectDescription")}
           </p>
         </div>
@@ -43,18 +43,18 @@ export default function FeaturedProjects() {
                   className="
                     group relative overflow-hidden
                     rounded-3xl border-border/60
-                    bg-card/70 backdrop-blur-xl
+                    bg-card backdrop-blur-xl
                     transition-all duration-500 ease-out
                     hover:-translate-y-2 hover:border-primary/40
-                    hover:shadow-[0_0_40px_rgba(214,113,55,0.15),0_20px_80px_rgba(214,113,55,0.12)]
-                    dark:hover:shadow-[0_0_50px_rgba(214,113,55,0.18),0_30px_90px_rgba(214,113,55,0.14)]
+                    hover:shadow-[0_0_40px_rgba(193,131,144,0.15),0_20px_80px_rgba(193,131,144,0.12)]
+                    dark:hover:shadow-[0_0_50px_rgba(193,131,144,0.18),0_30px_90px_rgba(193,131,144,0.14)]
                     before:absolute before:inset-0
                     before:bg-linear-to-b before:from-white/5 before:to-transparent
                     before:opacity-0 before:transition-opacity
                     hover:before:opacity-100
                   "
                 >
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,113,55,0.18),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(193,131,144,0.18),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   <CardContent className="relative z-10 p-4 sm:p-5 md:p-6">
                     <div className="flex items-center justify-between">
@@ -70,7 +70,7 @@ export default function FeaturedProjects() {
                         {t(`projects.${project.key}.title`)}
                       </h3>
 
-                      <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base md:text-lg md:leading-relaxed">
+                      <p className="mt-3 text-base leading-7 text-muted-foreground sm:text-base md:text-lg md:leading-relaxed">
                         {t(`projects.${project.key}.description`)}
                       </p>
                     </div>
@@ -92,7 +92,7 @@ export default function FeaturedProjects() {
 
                     <div
                       className={`
-                        relative mt-6 overflow-hidden rounded-2xl border border-white/10
+                        relative mt-6 overflow-hidden rounded-2xl border border-border
                         h-64 sm:h-72 md:h-80
                         ${
                           index % 3 === 0

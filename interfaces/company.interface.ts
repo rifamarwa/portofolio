@@ -5,4 +5,5 @@ export interface ICompany {
   period?: string;
   description?: string;
   logo?: string;
+  status?: "former" | "current";
 }

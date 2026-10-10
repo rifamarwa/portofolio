@@ -6,7 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-providers";
 
 const geistSans = Geist({
-  variable: "--font-sans",
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
