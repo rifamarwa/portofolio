@@ -7,6 +7,7 @@ const about = {
   years: "3+ years of professional experience",
   connect: "Connect on LinkedIn",
   viewWork: "View my work",
+  viewCV: "View CV",
   experience: "Experience",
   mainEmployer: "Main employer",
   btsPeriod: "Feb 2023 — Present",

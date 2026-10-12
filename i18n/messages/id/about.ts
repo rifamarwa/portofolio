@@ -7,6 +7,7 @@ const about = {
   years: "3+ tahun pengalaman profesional",
   connect: "Terhubung di LinkedIn",
   viewWork: "Lihat karya saya",
+  viewCV: "Lihat CV",
   experience: "Pengalaman",
   mainEmployer: "Perusahaan utama",
   btsPeriod: "Feb 2023 — Sekarang",
