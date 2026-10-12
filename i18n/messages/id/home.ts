@@ -94,6 +94,15 @@ const home = {
         "Mempelajari workflow pengembangan kolaboratif dan arsitektur frontend berbasis komponen.",
       ],
     },
+    bca: {
+      location: "Jakarta Pusat",
+      description:
+        "Berperan dalam tim yang membangun Human Resource Information System (HRIS) menggunakan Vue.js, mengembangkan antarmuka frontend untuk aplikasi tersebut.",
+      impact: [
+        "Mengembangkan dan memelihara antarmuka pengguna untuk modul HRIS, memastikan pengalaman pengguna yang mulus.",
+        "Bekerja sama dengan pengembang backend untuk mengintegrasikan API RESTful dan memastikan konsistensi data.",
+      ],
+    },
   },
   contact: {
     label: "Mari Bangun Sesuatu Bersama",
