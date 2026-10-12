@@ -9,6 +9,7 @@ export const techRegistry = {
   Angular: { icon: "/assets/icons/icon-angular.svg", variant: "red" },
   "Nuxt.js": { icon: "/assets/icons/icon-nuxtjs.svg", variant: "green" },
   Vite: { icon: "/assets/icons/icon-vite.png", variant: "purple" },
+  "Vue.js": { icon: "/assets/icons/icon-vuejs.webp", variant: "green" },
 
   "Tailwind CSS": {
     icon: "/assets/icons/icon-tailwindcss.png",
@@ -48,6 +49,7 @@ export const techGroups = [
       { name: "Angular", icon: "/assets/icons/icon-angular.svg" },
       { name: "Nuxt.js", icon: "/assets/icons/icon-nuxtjs.svg" },
       { name: "Vite", icon: "/assets/icons/icon-vite.png" },
+      { name: "Vue.js", icon: "/assets/icons/icon-vuejs.webp" },
     ],
   },
 

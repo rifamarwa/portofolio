@@ -85,6 +85,16 @@ const home = {
         "Learned collaborative development workflows and component-based frontend architecture.",
       ],
     },
+    bca: {
+      location: "Central Jakarta",
+      description:
+        "Contribute to a team building a Human Resource Information System (HRIS) using Vue.js, developing front-end interfaces for the application.",
+
+      impact: [
+        "Developed and maintained user interfaces for HRIS modules, ensuring a seamless user experience.",
+        "Collaborated with backend developers to integrate RESTful APIs and ensure data consistency.",
+      ],
+    },
   },
   contact: {
     label: "Let’s Build Something",
