@@ -3,7 +3,7 @@ import { IExperience } from "@/interfaces/experiences.interface";
 export const experiences: IExperience[] = [
   {
     company: "PT Intersolusi Teknologi Asia (BTS.id)",
-    role: "Front End Developer — Full Time (Client Assignment)",
+    role: "Front End Developer — Full Time",
     period: "Feb 2023 — Present",
     key: "bts",
 
