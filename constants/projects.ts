@@ -5,7 +5,7 @@ export const projects: IProject[] = [
   {
     key: "btsWebsite",
     size: "large",
-    images: "/assets/images/img-website-bts-square.png",
+    images: "/assets/images/img-website-bts.png",
     tech: ["Nuxt.js", "Tailwind CSS"],
   },
   // {
@@ -24,7 +24,7 @@ export const projects: IProject[] = [
   {
     key: "imap",
     size: "large",
-    images: "/assets/images/img-website-bts.png",
+    images: "/assets/images/img-imap.png",
     tech: ["React.js", "Tailwind CSS", "Ant Design"],
   },
   {
